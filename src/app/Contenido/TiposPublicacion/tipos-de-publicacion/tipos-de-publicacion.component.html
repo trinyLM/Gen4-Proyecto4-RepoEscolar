@@ -1,0 +1,32 @@
+<br><br>
+<br>
+
+<h1 style="text-align: center;">Tipos de publicacion</h1>
+<br>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col" class="text-white">#</th>
+        <th scope="col"  class="text-white">Tipo de publicacion</th>
+        <th scope="col"  class="text-white">Desripcion</th>
+        
+        <th scope="col"></th>
+        <th scope="col"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of tiposDePublicacion">
+        <th scope="row" class="text-white">{{a.id}}</th>
+        <td class="text-white">{{a.tipoDePublicacion}}</td>
+        <td class="text-white">{{a.descripcion}}</td>
+        
+        <td> <a class="btn btn-success">Ver mas...</a></td>
+        <td> <a class="btn btn-danger">Eliminar</a></td>
+       
+
+      </tr>
+      
+    </tbody>
+  </table>
+  <br>

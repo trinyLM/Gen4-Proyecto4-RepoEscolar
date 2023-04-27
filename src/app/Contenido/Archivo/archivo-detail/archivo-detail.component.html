@@ -1,0 +1,38 @@
+<br />
+<br />
+<br />
+<br />
+
+<div class="card mb-4 bg-dark" style="max-width: 80%; margin-left: 40px">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img
+        src="{{ archivo[0].imagen }}"
+        class="img-fluid rounded-start"
+        alt="..."
+      />
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h2 class="card-title text-white">{{ archivo[0].titulo }}</h2>
+        <br>
+        <h6 class="card-title text-white">Materia: {{ archivo[0].materia }}</h6>
+        <h6 class="card-title text-white">
+          Tipo de publicacion: {{ archivo[0].tipoDePublicacion }}
+        </h6>
+        <p class="card-text text-white">Resumen: {{ archivo[0].resumen }}</p>
+        <p class="card-text text-white">
+          Fecha de publicacion: {{ archivo[0].fechaDePublicacion }}
+        </p>
+        <p class="card-text text-white">Autor: {{ archivo[0].autor }}</p>
+        <div class="col" style="margin-top: 40px;">
+          <a href="{{ archivo[0].pdf }}" class="btn btn-success" style="margin-right: 40px;" target="_blank">Leer</a>
+          <a (click)="deleteArchivo(archivo[0].id)" class="btn btn-danger" style="margin-right: 40px;">Eliminar</a>
+          <a [routerLink]="['/archivos/edit',archivo[0].id]" class="btn btn-info" style="margin-right: 40px;">Editar</a>
+          <a [routerLink]="['/archivos']" class="btn btn-link" style="margin-right: 40px;">Atras</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

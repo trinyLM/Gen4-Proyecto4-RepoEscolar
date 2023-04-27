@@ -1,0 +1,94 @@
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container bg-dark">
+  <h2 style="text-align: center">Editando a {{ archivo[0].titulo }}</h2>
+  <br />
+  <form>
+    <div class="form-group">
+      <br />
+      <label for="titulo">Titulo</label>
+      <input
+        required="true"
+        type="text"
+        class="form-control"
+        id="titulo"
+        [(ngModel)]="archivo[0].titulo"
+        [value]="archivo[0].titulo"
+      />
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="materia">materia</label>
+      <input
+        required="true"
+        type="text"
+        class="form-control"
+        id="materia"
+        [(ngModel)]="archivo[0].materia"
+        [value]="archivo[0].materia"
+      />
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="resumen">resumen</label>
+      <br />
+      <textarea
+        name="resumen"
+        id="resumen"
+        cols="30"
+        rows="5"
+        class="form-control"
+        [(ngModel)]="archivo[0].resumen"
+        [value]="archivo[0].resumen"
+      ></textarea>
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="fechaDePublicacion">Fecha de Publicacion</label>
+      <input
+        required="true"
+        type="date"
+        class="form-control"
+        id="fechaDePublicacion"
+        [(ngModel)]="archivo[0].fechaDePublicacion"
+        [value]="archivo[0].fechaDePublicacion"
+      />
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="tipoPublicacion">Tipo de Publicacion</label>
+      <select name="" id="" class="form-select">
+        <option *ngFor="let t of tiposDePublicacion" [value]="t.id">
+          {{ t.tipoDePublicacion }}
+        </option>
+      </select>
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="autor">Autor</label>
+      <select name="" id="" class="form-select">
+        <option *ngFor="let a of autores" [value]="a.id">{{ a.nombre }}</option>
+      </select>
+    </div>
+    <br />
+    <div class="form-group">
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Cargar PDF</label>
+        <input class="form-control" type="file" id="formFile" required/>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Cargar Imagen</label>
+        <input class="form-control" type="file" id="formFile" required/>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <br>
+    <br>
+  </form>
+</div>

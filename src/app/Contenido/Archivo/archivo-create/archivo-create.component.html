@@ -1,0 +1,118 @@
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container bg-dark">
+  <h2 style="text-align: center">Crea un nuevo archivo</h2>
+  <br />
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <br />
+      <label for="titulo">Titulo</label>
+      <input
+        required
+        type="text"
+        class="form-control"
+        id="titulo"
+        name="titulo"
+      />
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="materia">materia</label>
+      <input
+        required="true"
+        type="text"
+        class="form-control"
+        name="materia"
+        id="materia"
+      />
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="resumen">resumen</label>
+      <br />
+      <textarea
+        required="true"
+        name="resumen"
+        id="resumen"
+        cols="30"
+        rows="5"
+        class="form-control"
+      ></textarea>
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="fechaPublicacion">Fecha de Publicacion</label>
+      <input
+        required="true"
+        type="date"
+        class="form-control"
+        name="fechaPublicacion"
+        id="fechaPublicacion"
+      />
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="tipoPublicacion">Tipo de Publicacion</label>
+      <select
+        name="tipoPublicacionId"
+        id="tipoPublicacionId"
+        class="form-select"
+        required="true"
+      >
+        <option *ngFor="let t of tiposDePublicacion" [value]="t.id">
+          {{ t.tipoDePublicacion }}
+        </option>
+      </select>
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="autor">Autor</label>
+      <select name="autorId" id="autorId" class="form-select" required="true" #autor>
+        <option *ngFor="let a of autores" [value]="a.id">
+          {{ a.nombre }} {{ a.apellidoPaterno }} {{ a.apellidoMaterno }}
+        </option>
+      </select>
+    </div>
+    <br />
+    <div class="form-group">
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Cargar PDF</label>
+        <input
+          class="form-control"
+          type="file"
+          name="pdf"
+          id="pdf"
+          (change)="onFileSelect($event)"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Cargar Imagen</label>
+        <input
+          class="form-control"
+          type="file"
+          id="imagen"
+          name="imagen"
+          (change)="onImgSelect($event)"
+          required
+        />
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <br />
+    <br />
+  </form>
+</div>
+
+
+
+
+
+
+

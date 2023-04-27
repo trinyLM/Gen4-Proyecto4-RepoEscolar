@@ -1,0 +1,39 @@
+<br><br>
+<br>
+
+<h1 style="text-align: center;">Archivos</h1>
+<br>
+<a [routerLink]="['/archivos/create/new']" class="btn btn-primary" style="margin-left: 2%;">Agregar un Nuevo Archivo</a>
+<br>
+<br>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col" class="text-white">#</th>
+        <th scope="col"  class="text-white">Titulo</th>
+        <th scope="col"  class="text-white">Fecha de Publicacion</th>
+        <th scope="col"  class="text-white">Tipo de publicacion</th>
+        <th scope="col"  class="text-white">Autor</th>
+        <th scope="col"  class="text-white">Materia</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of archivos">
+        <th scope="row" class="text-white">{{a.id}}</th>
+        <td class="text-white">{{a.titulo}}</td>
+        <td class="text-white">{{a.fechaDePublicacion}}</td>
+        <td class="text-white">{{a.tipoDePublicacion}}</td>
+        <td class="text-white">{{a.autor}}</td>
+        <td class="text-white">{{a.materia}}</td>
+        <td> <a class="btn btn-success" [routerLink]="['/archivos',a.id]">Ver mas...</a></td>
+        <td> <a class="btn btn-danger" (click)="deleteArchivo(a.id)">Eliminar</a></td>
+       
+
+      </tr>
+      
+    </tbody>
+  </table>
+  <br>
